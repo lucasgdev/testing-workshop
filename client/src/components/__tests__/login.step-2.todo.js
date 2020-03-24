@@ -9,15 +9,17 @@ import Login from '../login'
 test('calls onSubmit with the username and password when submitted', () => {
   // Arrange
   // use generate.loginForm() here
-  generate.loginForm();
+  generate.loginForm()
   const fakeUser = {username: 'chucknorris', password: '(╯°□°）╯︵ ┻━┻'}
   const handleSubmit = jest.fn()
-  const { getByLabelText, getByText, container } = render(<Login onSubmit={handleSubmit} />)
+  const {getByLabelText, getByText, container} = render(
+    <Login onSubmit={handleSubmit} />,
+  )
   // It'll give you back an object with
   // `getByLabelText` and `getByText` functions
   // so you don't need a div anymore!
-  const usernameNode = getByLabelText('Username');
-  const passwordNode = getByLabelText('Password');
+  const usernameNode = getByLabelText('Username')
+  const passwordNode = getByLabelText('Password')
 
   const formNode = container.querySelector('form')
   const submitButtonNode = getByText('Submit')
